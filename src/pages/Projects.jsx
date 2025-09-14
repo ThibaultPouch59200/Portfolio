@@ -15,6 +15,11 @@ export default function Projects() {
     navigate('/projects', { replace: true });
   }
 
+  function openModal(p) {
+    const identifier = p.slug || p.id;
+    navigate(`/projects?project=${encodeURIComponent(identifier)}`);
+  }
+
   return (
     <section className="space-y-6">
       <h2 className="text-2xl font-semibold text-dark dark:text-cream">{t('projects.title')}</h2>
@@ -23,7 +28,7 @@ export default function Projects() {
       )}
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((p) => (
-          <ProjectCard key={p.id} project={p} />
+          <ProjectCard key={p.id} project={p} onSelect={openModal} />
         ))}
       </div>
       {project && (
