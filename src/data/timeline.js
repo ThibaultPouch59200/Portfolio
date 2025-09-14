@@ -11,6 +11,13 @@ export const timelineEvents = [
     description: { fr: 'Début du travail à temps partiel en parallèle des études.', en: 'Started part-time work alongside studies.' }
   },
   {
+    id: 'project-nextrise-2025-09',
+    date: '2025-09-01',
+    type: 'project',
+    title: { fr: 'Projet final Tek2 : Nextrise', en: 'Tek2 Final Project: Nextrise' },
+    description: { fr: 'Projet majeur de fin d\'année.', en: 'Major end-of-year project.' }
+  },
+  {
     id: 'epitech-tek3-start-2025-09',
     date: '2025-09-01',
     type: 'education',
