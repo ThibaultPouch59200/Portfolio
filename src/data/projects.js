@@ -1,20 +1,35 @@
 const projects = [
   {
     id: 1,
+    slug: 'portfolio',
     title: 'Portfolio Starter',
     description: 'Base pour présenter vos projets avec i18n, Tailwind et React Router.',
+    descriptionLong: {
+      fr: 'Application portfolio moderne construite avec React + Vite, Tailwind pour le design utilitaire, internationalisation (i18n) et routage côté client. Structure pensée pour être facilement extensible (ajout de pages, de projets, de langues). Intégration d\'un thème clair/sombre et composants modulaires accessibles.',
+      en: 'Modern portfolio app built with React + Vite, Tailwind utility styling, internationalization (i18n) and client-side routing. Architecture designed to be easily extensible (adding pages, projects, languages). Includes light/dark theme and accessible modular components.'
+    },
+    goals: {
+      fr: [
+        'Mettre en place une base réutilisable',
+        'Gestion multilingue (i18n)',
+        'Thème clair / sombre',
+        'Composants modulaires accessibles'
+      ],
+      en: [
+        'Provide a reusable starter',
+        'Internationalization support',
+        'Light / dark theme',
+        'Accessible modular components'
+      ]
+    },
     tech: ['React', 'Vite', 'Tailwind'],
+    languages: ['JavaScript'],
+    technologies: ['React Router', 'i18next', 'TailwindCSS'],
+    values: ['Structure', 'Accessibilité', 'Internationalisation'],
     link: '#'
   },
   {
     id: 2,
-    title: 'API Demo',
-    description: 'Exemple d\'intégration d\'une API REST publique.',
-    tech: ['Fetch', 'REST'],
-    link: '#'
-  },
-  {
-    id: 3,
     slug: 'zappy',
     title: 'Zappy',
     description: 'Jeu "zéro joueur" multi-composants : serveur, interface, IA coopérative.',
@@ -37,7 +52,10 @@ const projects = [
       ]
     },
     tech: ['C', 'Sockets', 'Concurrency', 'Algorithms'],
-    link: null
+    languages: ['C', 'C++', 'Python'],
+    technologies: ['Sockets', 'Raylib', 'Distributed AI'],
+    values: ['Gestion serveur', 'UI/UX', 'Conception IA'],
+    link: "https://github.com/Aincrad-Flux/Zappy"
   }
 ];
 
