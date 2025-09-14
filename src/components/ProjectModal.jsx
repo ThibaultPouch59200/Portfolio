@@ -20,9 +20,13 @@ export default function ProjectModal({ project, onClose }) {
 
   if (!project) return null;
 
-  const long = project.descriptionLong?.[locale];
-  const goals = project.goals?.[locale];
-  const { languages, technologies, values } = project;
+  const long = typeof project.descriptionLong === 'object' ? project.descriptionLong?.[locale] : project.descriptionLong;
+  const goals = typeof project.goals === 'object' ? project.goals?.[locale] : project.goals;
+  const title = typeof project.title === 'object' ? (project.title[locale] || project.title.fr || project.title.en) : project.title;
+  const description = typeof project.description === 'object' ? (project.description[locale] || project.description.fr || project.description.en) : project.description;
+  const languages = Array.isArray(project.languages) ? project.languages : (typeof project.languages === 'object' ? project.languages[locale] : project.languages);
+  const technologies = Array.isArray(project.technologies) ? project.technologies : (typeof project.technologies === 'object' ? project.technologies[locale] : project.technologies);
+  const values = Array.isArray(project.values) ? project.values : (typeof project.values === 'object' ? project.values[locale] : project.values);
 
   function onBackdropClick(e) {
     if (e.target === e.currentTarget) onClose();
@@ -42,9 +46,9 @@ export default function ProjectModal({ project, onClose }) {
           aria-label={t('close') || 'Close'}
         >×</button>
         <div className="p-6 space-y-4">
-          <h2 className="text-2xl font-semibold text-dark dark:text-cream">{project.title}</h2>
+          <h2 className="text-2xl font-semibold text-dark dark:text-cream">{title}</h2>
           <p className="text-sm text-dark/70 dark:text-beige/80 leading-relaxed">
-            {long || project.description}
+            {long || description}
           </p>
           {goals && goals.length > 0 && (
             <ul className="list-disc list-inside text-sm space-y-1 text-dark/70 dark:text-beige/80">

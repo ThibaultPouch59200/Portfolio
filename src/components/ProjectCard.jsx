@@ -1,7 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 export default function ProjectCard({ project, onSelect }) {
+  const { i18n, t } = useTranslation();
+  const locale = i18n.language.startsWith('en') ? 'en' : 'fr';
   const hasExtended = project.descriptionLong || project.goals;
   const showInfo = hasExtended && onSelect;
   const primaryTags = project.languages || project.tech || [];
+  const title = typeof project.title === 'object' ? (project.title[locale] || project.title.fr || project.title.en) : project.title;
+  const description = typeof project.description === 'object' ? (project.description[locale] || project.description.fr || project.description.en) : project.description;
 
   function handleSeeMore(e) {
     e.preventDefault();
@@ -10,8 +16,8 @@ export default function ProjectCard({ project, onSelect }) {
 
   return (
     <div className="group border rounded-lg p-4 flex flex-col gap-2 bg-light-surface/80 border-light-border dark:bg-darkTheme-surface/70 dark:border-darkTheme-border hover:border-accent shadow-sm dark:shadow-none transition-colors">
-      <h3 className="text-lg font-semibold text-dark dark:text-cream group-hover:text-accent transition-colors">{project.title}</h3>
-      <p className="text-sm text-dark/70 dark:text-beige/80 flex-1">{project.description}</p>
+  <h3 className="text-lg font-semibold text-dark dark:text-cream group-hover:text-accent transition-colors">{title}</h3>
+  <p className="text-sm text-dark/70 dark:text-beige/80 flex-1">{description}</p>
       {primaryTags.length > 0 && (
         <div className="flex flex-wrap gap-2 text-xs">
           {primaryTags.map((t) => (
@@ -27,7 +33,7 @@ export default function ProjectCard({ project, onSelect }) {
               type="button"
               className="text-xs font-medium px-3 py-1.5 rounded border border-accent/60 text-accent hover:bg-accent/10 transition-colors"
             >
-              Plus d'infos
+              {t('projects.more', 'Plus d\'infos')}
             </button>
           )}
           {project.link && (
@@ -37,7 +43,7 @@ export default function ProjectCard({ project, onSelect }) {
               rel="noreferrer"
               className="text-xs font-medium px-3 py-1.5 rounded bg-accent text-white hover:opacity-90 transition-colors"
             >
-              Voir le projet
+              {t('projects.view', 'Voir le projet')}
             </a>
           )}
         </div>
