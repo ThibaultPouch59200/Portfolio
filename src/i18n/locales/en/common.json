@@ -1,0 +1,8 @@
+{
+  "nav": {"home": "Home", "about": "About", "projects": "Projects", "contact": "Contact"},
+  "hero": {"title": "Hi, I'm","role": "Web Developer"},
+  "about": {"title": "About Me", "text": "I am a passionate developer who loves building modern web applications."},
+  "projects": {"title": "Projects", "empty": "No projects yet."},
+  "contact": {"title": "Contact", "text": "Want to collaborate? Send me a message."},
+  "lang": {"fr": "Français", "en": "English"}
+}
