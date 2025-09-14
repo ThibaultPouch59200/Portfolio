@@ -6,9 +6,9 @@ export default function Projects() {
   const { t } = useTranslation();
   return (
     <section className="space-y-6">
-      <h2 className="text-2xl font-semibold text-cream">{t('projects.title')}</h2>
+  <h2 className="text-2xl font-semibold text-dark dark:text-cream">{t('projects.title')}</h2>
       {projects.length === 0 && (
-        <p className="text-beige/70 text-sm">{t('projects.empty')}</p>
+  <p className="text-dark/60 dark:text-beige/70 text-sm">{t('projects.empty')}</p>
       )}
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((p) => (
