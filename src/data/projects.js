@@ -3,7 +3,10 @@ const projects = [
     id: 8,
     slug: 'jeb-incubator',
     title: 'JEB Startup Platform',
-    description: 'Plateforme Next.js + React pour visibilité startups, acteurs & opportunités (incubateur JEB).',
+    description: {
+      fr: 'Plateforme Next.js + React pour visibilité startups, acteurs & opportunités (incubateur JEB).',
+      en: 'Next.js + React platform for startup visibility, stakeholders & opportunities (JEB incubator).'
+    },
     descriptionLong: {
       fr: 'Plateforme moderne pour l\'incubateur JEB : backend API Next.js (auth JWT, intégrations, données incubateur) et frontend Vite/React mettant en avant les startups, actualités, événements, opportunités et interactions investisseurs/partenaires. Objectifs clés : centraliser visibilité, connexions (investisseurs, partenaires, institutions), diffusion d\'actualités dynamiques (levées, annonces, événements) et gestion de contenu administrable (news, startups, rôles). Architecture modulable, séparation claire frontend / backend, intégration Supabase (stockage / potentiel persistance) et pipeline future CI/CD.',
       en: 'Modern platform for the JEB incubator: Next.js API backend (JWT auth, integrations, incubator data) and Vite/React frontend highlighting startups, news, events, opportunities and investor/partner interactions. Core goals: centralize visibility, enable connections (investors, partners, institutions), surface dynamic updates (funding rounds, announcements, events) and provide admin-managed content (news, startups, roles). Modular architecture with clear frontend/backend split, Supabase integration (storage / potential persistence) and future CI/CD pipeline.'
@@ -34,7 +37,10 @@ const projects = [
     id: 1,
     slug: 'portfolio',
     title: 'Portfolio',
-    description: 'Base pour présenter vos projets avec i18n, Tailwind et React Router.',
+    description: {
+      fr: 'Base pour présenter vos projets avec i18n, Tailwind et React Router.',
+      en: 'Starter base to showcase projects with i18n, Tailwind and React Router.'
+    },
     descriptionLong: {
       fr: 'Application portfolio moderne construite avec React + Vite, Tailwind pour le design utilitaire, internationalisation (i18n) et routage côté client. Structure pensée pour être facilement extensible (ajout de pages, de projets, de langues). Intégration d\'un thème clair/sombre et composants modulaires accessibles.',
       en: 'Modern portfolio app built with React + Vite, Tailwind utility styling, internationalization (i18n) and client-side routing. Architecture designed to be easily extensible (adding pages, projects, languages). Includes light/dark theme and accessible modular components.'
@@ -63,7 +69,10 @@ const projects = [
     id: 2,
     slug: 'zappy',
     title: 'Zappy',
-    description: 'Jeu "zéro joueur" multi-composants : serveur, interface, IA coopérative.',
+    description: {
+      fr: 'Jeu "zéro joueur" multi-composants : serveur, interface, IA coopérative.',
+      en: 'Zero-player multi-component game: server, observer UI, cooperative AI.'
+    },
     descriptionLong: {
       fr: 'Projet de fin de Tek2 en équipe de 6 : conception d\'un jeu à zéro joueur où des IA évoluent sur une carte, collectent des ressources, gèrent leur nourriture et se synchronisent pour atteindre le niveau 8. Architecture comprenant un serveur réseau, une interface d\'observation et une IA distribuée (plusieurs processus/clients) avec protocoles de communication et stratégies de coopération.',
       en: 'End of Tek2 team project (6 members): design of a zero-player style game where AIs roam a map, gather resources, manage food and coordinate to reach level 8. Architecture included a network server, an observer UI and a distributed AI (multiple client processes) with custom communication protocol and cooperative strategies.'
@@ -92,7 +101,10 @@ const projects = [
     id: 3,
     slug: 'raytracer',
     title: 'RayTracer',
-    description: 'Moteur de ray tracing C++ multithread avec primitives, matériaux, éclairage et sortie PPM / aperçu SFML.',
+    description: {
+      fr: 'Moteur de ray tracing C++ multithread avec primitives, matériaux, éclairage et sortie PPM / aperçu SFML.',
+      en: 'Multithreaded C++ ray tracing engine with primitives, materials, lighting and PPM/SFML preview.'
+    },
     descriptionLong: {
       fr: 'Moteur de ray tracing écrit en C++17 permettant de rendre des scènes 3D via un système de caméra configurable, plusieurs primitives (sphères, cylindres), matériaux avec composantes ambiante/diffuse/spéculaire, éclairage directionnel, ombres et shading. Rendu multithread (division en tuiles) avec export PPM ou aperçu temps réel + capture PNG via SFML. Construction de scène via fichiers de configuration libconfig (camera, primitives, lights) et architecture modulaire utilisant les patrons Builder, Factory, Strategy et Composite pour extensibilité et maintenance.',
       en: 'C++17 ray tracing engine rendering 3D scenes with a configurable camera system, multiple primitives (spheres, cylinders), materials (ambient/diffuse/specular components), directional lights, shadows and shading. Multithreaded tile-based rendering with PPM output or real-time SFML preview + PNG capture. Scenes are described with libconfig files (camera, primitives, lights). Architecture leverages Builder, Factory, Strategy and Composite patterns for modularity and extensibility.'
@@ -123,7 +135,10 @@ const projects = [
     id: 4,
     slug: 'arthemis',
     title: 'ARthemis',
-    description: 'Plateforme Jenkins automatisée (JCasC) pour revue et tests de projets étudiants.',
+    description: {
+      fr: 'Plateforme Jenkins automatisée (JCasC) pour revue et tests de projets étudiants.',
+      en: 'Automated Jenkins (JCasC) platform for student project reviews & testing.'
+    },
     descriptionLong: {
       fr: 'ARthemis (Automated Review & Testing Engine for Modular Integration on Software) est une plateforme basée sur Jenkins permettant d\'automatiser la revue, l\'exécution de tests et l\'intégration continue de projets étudiants. Elle fournit une configuration Jenkins-as-Code (JCasC), des pipelines Groovy prêts à l\'emploi, une gestion de rôles (Sentinel, Architect, Voyager) et une intégration facilitée de dépôts GitHub (y compris privés via clés SSH). L\'objectif est d\'accélérer le déploiement, standardiser les tests et améliorer la qualité logicielle.',
       en: 'ARthemis (Automated Review & Testing Engine for Modular Integration on Software) is a Jenkins-based platform automating review, testing and continuous integration for student projects. It delivers Jenkins Configuration as Code (JCasC), ready-to-use Groovy pipelines, role-based access (Sentinel, Architect, Voyager) and streamlined onboarding of GitHub repositories (including private via SSH keys). The goal is to accelerate provisioning, standardize testing and improve software quality.'
@@ -154,7 +169,10 @@ const projects = [
     id: 5,
     slug: 'jiraswapautomate',
     title: 'JiraSwapAutomate',
-    description: 'Outil de synchronisation multi‑Jira : tickets, commentaires, temps & automatisations.',
+    description: {
+      fr: 'Outil de synchronisation multi‑Jira : tickets, commentaires, temps & automatisations.',
+      en: 'Multi-Jira synchronization tool: tickets, comments, time entries & automations.'
+    },
     descriptionLong: {
       fr: 'JiraSwapAutomate est un outil destiné à synchroniser automatiquement des tickets entre plusieurs instances Jira (interne ↔ client). Il gère le transfert conditionnel (avec validation) des modifications, la synchronisation des commentaires, des pièces jointes et l\'automatisation des mises à jour. Il inclut aussi la gestion des entrées de temps (imports Excel) et un système de logs/reporting détaillé. Déployable via Docker et extensible pour divers workflows de gestion de projet.',
       en: 'JiraSwapAutomate is a tool to automatically synchronize tickets across multiple Jira instances (internal ↔ client). It performs conditional (validated) propagation of changes, comment synchronization, attachment handling and bulk updates. It also manages time entries (Excel import) and provides detailed logging/reporting. Deployable with Docker and extensible for various project management workflows.'
@@ -185,7 +203,10 @@ const projects = [
     id: 6,
     slug: 'mytop',
     title: 'MyTop',
-    description: 'Outil de monitoring système modulaire (terminal ncurses & interface graphique SFML).',
+    description: {
+      fr: 'Outil de monitoring système modulaire (terminal ncurses & interface graphique SFML).',
+      en: 'Modular system monitoring tool (ncurses terminal & SFML GUI).'
+    },
     descriptionLong: {
       fr: 'MyTop est un outil de supervision système en temps réel offrant une architecture modulaire permettant d\'activer ou désactiver des modules (CPU, RAM, Batterie, Réseau, Système, Temps). Il fournit deux interfaces : terminal (ncurses) et graphique (SFML). Actualisation configurable, navigation clavier, et design extensible via ajout de nouveaux modules implémentant une interface commune. Idéal pour explorer les APIs système et la conception modulaire.',
       en: 'MyTop is a real-time system monitoring tool with a modular architecture where each subsystem (CPU, RAM, Battery, Network, System Info, Time) is its own module. It offers both a terminal (ncurses) and a graphical (SFML) interface. Refresh rate is adjustable, modules can be toggled live, and new modules can be added by implementing a shared interface. Useful for exploring system APIs and modular design.'
@@ -216,7 +237,10 @@ const projects = [
     id: 7,
     slug: 'invasori-infinito',
     title: 'Invasori Infinito',
-    description: 'Jeu arcade type Space Invaders infini avec power-ups, boss et boucle temporelle.',
+    description: {
+      fr: 'Jeu arcade type Space Invaders infini avec power-ups, boss et boucle temporelle.',
+      en: 'Endless Space-Invaders style arcade game with power-ups, bosses and time loop.'
+    },
     descriptionLong: {
       fr: 'Invasori Infinito est un jeu arcade inspiré de Space Invaders, créé lors d\'un hackathon. Le joueur incarne le Commandant Lupo Bruni piégé dans une boucle temporelle en 3147, tentant de sauver une Terre mourante. Vagues infinies d\'ennemis, boss périodiques, power-ups stratégiques (effacement écran, cadence de tir, vitesse, vie) et narration environnementale (séquence secrète, apparition Fenice). Objectif : survivre le plus longtemps et repousser l\'inévitable tout en cherchant à briser le cycle.',
       en: 'Invasori Infinito is a Space-Invaders inspired arcade game built during a hackathon. You play Commander Lupo Bruni, trapped in a time loop in the year 3147 trying to save a dying Earth. Endless alien waves, periodic bosses, strategic power-ups (screen wipe, fire rate, movement speed, extra life) and environmental storytelling (secret input sequence, the Phoenix apparition). Goal: survive as long as possible and push for a way to break the loop.'
