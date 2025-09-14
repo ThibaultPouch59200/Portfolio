@@ -1,7 +1,7 @@
 {
   "nav": {"home": "Accueil", "about": "À propos", "projects": "Projets", "contact": "Contact"},
-  "hero": {"title": "Bonjour, je suis","role": "Développeur Web"},
-  "about": {"title": "À propos de moi", "text": "Je suis un développeur passionné qui aime construire des applications web modernes."},
+  "hero": {"title": "Bonjour, je m'appelle","role": "Développeur Web"},
+  "about": {"title": "À propos de moi", "text": "Je suis un développeur passionné qui aime construire des applications web modernes.", "timelineTitle": "Parcours"},
   "projects": {"title": "Projets", "empty": "Aucun projet pour le moment."},
   "contact": {"title": "Contact", "text": "Envie de collaborer ? Envoyez-moi un message."},
   "lang": {"fr": "Français", "en": "English"}
