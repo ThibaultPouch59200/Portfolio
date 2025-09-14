@@ -2,7 +2,16 @@
   "nav": {"home": "Home", "about": "About", "projects": "Projects", "contact": "Contact"},
   "hero": {"title": "Hi, I'm","role": "Web Developer"},
   "about": {"title": "About Me", "timelineTitle": "Timeline"},
-  "projects": {"title": "Projects", "empty": "No projects yet.", "view": "View project"},
+  "projects": {
+    "title": "Projects",
+    "empty": "No projects yet.",
+    "view": "View project",
+    "categories": {
+      "languages": "Languages",
+      "technologies": "Technologies",
+      "values": "Skills"
+    }
+  },
   "contact": {"title": "Contact", "text": "Want to collaborate? Send me a message."},
   "lang": {"fr": "Français", "en": "English"},
   "close": "Close"
