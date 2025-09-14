@@ -1,7 +1,48 @@
 {
   "nav": {"home": "Home", "about": "About", "projects": "Projects", "contact": "Contact"},
-  "hero": {"title": "Hi, I'm","role": "Web Developer"},
-  "about": {"title": "About Me", "timelineTitle": "Timeline"},
+  "hero": {
+    "title": "Hi, I'm",
+    "role": "Web Developer",
+    "subtitleShort": "3rd year Epitech student — Software & DevOps focus",
+    "subtitleTech": "CI/CD pipelines, automation, modular architectures & internal tooling.",
+    "aliases": "Aliases",
+    "currentStatus": "Currently: 3rd year Epitech • DevOps / Software oriented"
+  },
+  "roles": {
+    "softwareDevOps": "Software Engineering & DevOps"
+  },
+  "home": {
+    "sections": {
+      "timeline": "Recent Journey",
+      "featuredProjects": "Featured Projects",
+      "stats": "Key Stats"
+    },
+    "cta": {
+      "viewProjects": "View Projects",
+      "contact": "Contact Me",
+      "downloadCV": "Download CV"
+    },
+    "stats": {
+      "projects": "Major Projects",
+      "years": "Intensive Years",
+      "languages": "Languages Used",
+      "automation": "Automations / Pipelines"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "timelineTitle": "Timeline",
+    "text": "3rd year Epitech student in a project‑driven environment emphasizing autonomy, iterative delivery and technical ownership. I enjoy building tooling that automates, stabilizes or accelerates engineering workflows. My approach blends technical curiosity (CI/CD, internal tools, architecture) with product pragmatism."
+  },
+  "curriculum": {
+    "title": "Curriculum & Method",
+    "paragraphs": [
+      "Epitech is a project‑centric engineering school: learn by doing, minimal lectures, heavy emphasis on design, collaboration and peer review.",
+      "Each year builds through progressive projects: systems & low‑level in C/C++, networking, then software architecture, internal tooling, automation pipelines and larger scale initiatives.",
+      "This format builds autonomy, rapid technology ramp‑up ability and disciplined maintainability. I leverage it to structure DevOps environments (integration, testing, industrialization).",
+      "Today I combine: application development (C++, Python, JS/TS), internal tooling (monitoring, Jira sync), pipeline setup (Jenkins, scripts) and modular project foundations."
+    ]
+  },
   "projects": {
     "title": "Projects",
     "empty": "No projects yet.",
@@ -16,4 +57,10 @@
   "contact": {"title": "Contact", "text": "Want to collaborate? Send me a message."},
   "lang": {"fr": "Français", "en": "English"},
   "close": "Close"
+  ,"footer": {
+    "nav": "Navigation",
+    "allRights": "All rights reserved",
+    "builtWith": "Built with React & Tailwind",
+    "server": "Server"
+  }
 }

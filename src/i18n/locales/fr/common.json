@@ -1,7 +1,48 @@
 {
   "nav": {"home": "Accueil", "about": "À propos", "projects": "Projets", "contact": "Contact"},
-  "hero": {"title": "Bonjour, je m'appelle","role": "Développeur Web"},
-  "about": {"title": "À propos de moi", "text": "Je suis un développeur passionné qui aime construire des applications web modernes.", "timelineTitle": "Parcours"},
+  "hero": {
+    "title": "Bonjour, je m'appelle",
+    "role": "Développeur Web",
+    "subtitleShort": "Étudiant en 3e année à Epitech — focalisé Software & DevOps",
+    "subtitleTech": "Pipelines CI/CD, automatisation, architectures modulaires & outils internes.",
+    "aliases": "Pseudos",
+    "currentStatus": "Actuellement : 3e année Epitech • Orientation DevOps / Software"
+  },
+  "roles": {
+    "softwareDevOps": "Ingénierie Logicielle & DevOps"
+  },
+  "home": {
+    "sections": {
+      "timeline": "Parcours récent",
+      "featuredProjects": "Projets en avant",
+      "stats": "Chiffres clés"
+    },
+    "cta": {
+      "viewProjects": "Voir les projets",
+      "contact": "Me contacter",
+      "downloadCV": "Télécharger le CV"
+    },
+    "stats": {
+      "projects": "Projets majeurs",
+      "years": "Années intensives",
+      "languages": "Langages utilisés",
+      "automation": "Automatisations / pipelines"
+    }
+  },
+  "about": {
+    "title": "À propos de moi",
+    "text": "Étudiant en 3e année à Epitech, j'évolue dans un environnement d'apprentissage basé sur l'autonomie, la pratique intensive et la capacité à concevoir des solutions robustes rapidement. J'aime construire des outils qui automatisent, fiabilisent ou accélèrent le travail des équipes. Mon approche mêle curiosité technique (CI/CD, outils internes, architecture) et pragmatisme produit.",
+    "timelineTitle": "Parcours"
+  },
+  "curriculum": {
+    "title": "Cursus & Méthode",
+    "paragraphs": [
+      "Epitech est une école d'informatique orientée projet : apprentissage par l'action, très peu de cours magistraux, énormément de conception, de collaboration et de révision entre pairs.",
+      "Chaque année repose sur des projets progressifs : algorithmique système, réseau, développement bas niveau (C/C++), puis architecture logicielle, outils internes, pipelines d'automatisation et projets de plus grande échelle.",
+      "Ce format forge une forte autonomie, une capacité à apprendre de nouvelles technos rapidement et une rigueur dans la maintenance. Je capitalise dessus pour structurer des environnements DevOps (intégration, tests, industrialisation).",
+      "Aujourd'hui je combine : développement applicatif (C++, Python, JS/TS), création d'outils internes (monitoring, synchronisation Jira), mise en place de pipelines (Jenkins, scripts) et structuration de bases projets modulaires."
+    ]
+  },
   "projects": {
     "title": "Projets",
     "empty": "Aucun projet pour le moment.",
@@ -16,4 +57,10 @@
   "contact": {"title": "Contact", "text": "Envie de collaborer ? Envoyez-moi un message."},
   "lang": {"fr": "Français", "en": "English"},
   "close": "Fermer"
+  ,"footer": {
+    "nav": "Navigation",
+    "allRights": "Tous droits réservés",
+    "builtWith": "Construit avec React & Tailwind",
+    "server": "Serveur"
+  }
 }
