@@ -8,7 +8,7 @@ import Contact from './pages/Contact.jsx';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-light-bg text-light-text dark:bg-darkTheme-bg dark:text-darkTheme-text transition-colors duration-200">
       <Navbar />
       <main className="flex-1 w-full max-w-5xl mx-auto px-4 py-8">
         <Routes>
