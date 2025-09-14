@@ -1,8 +1,39 @@
 const projects = [
   {
+    id: 8,
+    slug: 'jeb-incubator',
+    title: 'JEB Startup Platform',
+    description: 'Plateforme Next.js + React pour visibilité startups, acteurs & opportunités (incubateur JEB).',
+    descriptionLong: {
+      fr: 'Plateforme moderne pour l\'incubateur JEB : backend API Next.js (auth JWT, intégrations, données incubateur) et frontend Vite/React mettant en avant les startups, actualités, événements, opportunités et interactions investisseurs/partenaires. Objectifs clés : centraliser visibilité, connexions (investisseurs, partenaires, institutions), diffusion d\'actualités dynamiques (levées, annonces, événements) et gestion de contenu administrable (news, startups, rôles). Architecture modulable, séparation claire frontend / backend, intégration Supabase (stockage / potentiel persistance) et pipeline future CI/CD.',
+      en: 'Modern platform for the JEB incubator: Next.js API backend (JWT auth, integrations, incubator data) and Vite/React frontend highlighting startups, news, events, opportunities and investor/partner interactions. Core goals: centralize visibility, enable connections (investors, partners, institutions), surface dynamic updates (funding rounds, announcements, events) and provide admin-managed content (news, startups, roles). Modular architecture with clear frontend/backend split, Supabase integration (storage / potential persistence) and future CI/CD pipeline.'
+    },
+    goals: {
+      fr: [
+        'Visibilité unifiée des startups',
+        'Connexions investisseurs & partenaires',
+        'Actualités dynamiques (levées, événements)',
+        'Gestion de contenu administrable',
+        'Architecture modulable & évolutive'
+      ],
+      en: [
+        'Unified startup visibility',
+        'Investor & partner connections',
+        'Dynamic news & events feed',
+        'Admin managed content',
+        'Modular & scalable architecture'
+      ]
+    },
+    tech: ['Next.js', 'React', 'Vite', 'JWT', 'Supabase'],
+    languages: ['JavaScript', 'TypeScript'],
+    technologies: ['Next.js API Routes', 'Supabase', 'JWT Auth', 'PostgreSQL (planned)', 'Docker (planned)'],
+    values: ['Visibilité', 'Collaboration', 'Scalabilité', 'Produit'],
+    link: 'https://github.com/Aincrad-Flux/NextRise'
+  },
+  {
     id: 1,
     slug: 'portfolio',
-    title: 'Portfolio Starter',
+    title: 'Portfolio',
     description: 'Base pour présenter vos projets avec i18n, Tailwind et React Router.',
     descriptionLong: {
       fr: 'Application portfolio moderne construite avec React + Vite, Tailwind pour le design utilitaire, internationalisation (i18n) et routage côté client. Structure pensée pour être facilement extensible (ajout de pages, de projets, de langues). Intégration d\'un thème clair/sombre et composants modulaires accessibles.',
@@ -26,7 +57,7 @@ const projects = [
     languages: ['JavaScript'],
     technologies: ['React Router', 'i18next', 'TailwindCSS'],
     values: ['Structure', 'Accessibilité', 'Internationalisation'],
-    link: '#'
+    link: 'https://github.com/BoxOfPandor/Portfolio'
   },
   {
     id: 2,
@@ -86,7 +117,7 @@ const projects = [
     languages: ['C++'],
     technologies: ['SFML', 'libconfig++', 'Design Patterns'],
     values: ['Performance', 'Architecture', 'Rendu 3D'],
-    link: '#'
+    link: 'https://github.com/BoxOfPandor/RayTracer'
   },
   {
     id: 4,
@@ -117,7 +148,7 @@ const projects = [
     languages: ['Groovy', 'YAML', 'Shell'],
     technologies: ['JCasC', 'Pipelines', 'SSH Integration'],
     values: ['Automatisation', 'Qualité', 'Intégration Continue'],
-    link: 'https://github.com/ton-utilisateur/ARTHEMIS'
+    link: 'https://github.com/BoxOfPandor/Arthemis'
   },
   {
     id: 5,
@@ -148,7 +179,7 @@ const projects = [
     languages: ['Python', 'Shell', 'Docker'],
     technologies: ['Jira API', 'Webhooks', 'Excel Import'],
     values: ['Automatisation', 'Productivité', 'Qualité'],
-    link: '#'
+    link: 'https://github.com/BoxOfPandor/Jira-Interface-Relais-Automate'
   },
   {
     id: 6,
@@ -179,7 +210,7 @@ const projects = [
     languages: ['C++'],
     technologies: ['ncurses', 'SFML', 'Modules'],
     values: ['Modularité', 'Performance', 'Ergonomie'],
-    link: '#'
+    link: 'https://github.com/BoxOfPandor/MyTop'
   },
   {
     id: 7,
@@ -210,7 +241,7 @@ const projects = [
     languages: ['Python'],
     technologies: ['Pygame'],
     values: ['Créativité', 'Rapidité', 'Gameplay'],
-    link: '#'
+    link: 'https://github.com/BoxOfPandor/invasori_infinito'
   }
 ];
 
