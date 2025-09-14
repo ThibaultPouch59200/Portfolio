@@ -39,6 +39,43 @@ src/
 - Nom / rôle: modifier dans `Home.jsx` et `Footer.jsx`
 - Projets: éditer `src/data/projects.js`
 
+## 🕒 Timeline (Parcours)
+La page `About` affiche une timeline verticale (événements les plus récents en haut).
+
+### Ajouter / modifier un événement
+Éditer le fichier `src/data/timeline.js` et ajouter un objet au tableau `timelineEvents`.
+
+Structure d'un événement:
+```js
+{
+  id: 'unique-id',           // unique, utilisé comme key React
+  date: '2025-09-01',        // ISO (YYYY-MM-DD) pour tri
+  type: 'education' | 'work' | 'internship' | 'project' | 'autre',
+  title: { fr: 'Titre FR', en: 'EN Title' },
+  description: { fr: 'Description FR', en: 'EN Description' },
+  details: {                 // (optionnel) listes supplémentaires
+    fr: ['Point 1', 'Point 2'],
+    en: ['Item 1', 'Item 2']
+  }
+}
+```
+
+Les événements sont automatiquement triés (plus récent d'abord). Le format de date affiché suit `Jour / Mois / Année` (FR) ou `Day / Mon / Year` (EN). Pour forcer un ordre entre deux événements le même jour, ajuster l'heure (`2025-09-01T08:00:00`).
+
+### Types & couleurs
+- `education` (bleu)
+- `internship` (vert)
+- `work` (indigo)
+- `project` (orange)
+- autre: gris par défaut
+
+### Limiter le nombre d'éléments
+Dans un autre composant: `<Timeline limit={5} />`.
+
+### i18n
+Le composant choisit `fr` ou `en` selon la langue active (fallback FR).
+
+
 ## 🧪 Qualité Code
 - Lint: `npm run lint`
 - ESLint + Prettier configurés
