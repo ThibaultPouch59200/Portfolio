@@ -10,7 +10,7 @@ const typeStyles = {
   default: 'bg-gray-400 dark:bg-gray-500'
 };
 
-export default function Timeline({ limit }) {
+export default function Timeline({ limit, showDates = true }) {
   const { i18n } = useTranslation();
   const locale = i18n.language.startsWith('en') ? 'en' : 'fr';
   const events = getTimeline(locale).slice(0, limit || undefined);
@@ -33,19 +33,21 @@ export default function Timeline({ limit }) {
                   <h3 className="font-semibold text-dark dark:text-cream text-lg">
                     {evt.title}
                   </h3>
-                  <time className="text-sm font-medium text-dark/60 dark:text-cream/60 whitespace-nowrap">
-                    {formatTimelineDate(evt.date, locale)}
-                  </time>
+                  {showDates && (
+                    <time className="text-sm font-medium text-dark/60 dark:text-cream/60 whitespace-nowrap">
+                      {formatTimelineDate(evt.date, locale)}
+                    </time>
+                  )}
                 </div>
                 <p className="text-sm text-dark/70 dark:text-beige/80 leading-relaxed">
                   {evt.description}
                 </p>
-                {evt.id === 'project-zappy-2025-06' && (
+                {evt.projectSlug && (
                   <div className="mt-3">
                     <a
-                      href="/projects?project=zappy"
+                      href={`/projects?project=${encodeURIComponent(evt.projectSlug)}`}
                       className="inline-block text-xs font-semibold tracking-wide px-3 py-1.5 rounded bg-accent text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent/60 transition"
-                    >Voir le projet</a>
+                    >{locale === 'en' ? 'View project' : 'Voir le projet'}</a>
                   </div>
                 )}
                 {evt.details && (

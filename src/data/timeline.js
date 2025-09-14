@@ -14,8 +14,9 @@ export const timelineEvents = [
     id: 'project-nextrise-2025-09',
     date: '2025-09-01',
     type: 'project',
-    title: { fr: 'Projet final Tek2 : Nextrise', en: 'Tek2 Final Project: Nextrise' },
-    description: { fr: 'Projet majeur de fin d\'année.', en: 'Major end-of-year project.' }
+    title: { fr: 'Projet de piscine Tek3 : Nextrise', en: 'Tek3 Swimming Pool Project: Nextrise' },
+    description: { fr: 'Projet de piscine pour le client JEB Incubator.', en: 'Swimming pool project for client JEB Incubator.' },
+    projectSlug: 'jeb-incubator'
   },
   {
     id: 'epitech-tek3-start-2025-09',
@@ -36,7 +37,8 @@ export const timelineEvents = [
     date: '2025-06-15',
     type: 'project',
     title: { fr: 'Projet final Tek2 : Zappy', en: 'Tek2 Final Project: Zappy' },
-    description: { fr: 'Projet majeur de fin d\'année.', en: 'Major end-of-year project.' }
+    description: { fr: 'Projet majeur de fin d\'année.', en: 'Major end-of-year project.' },
+    projectSlug: 'zappy'
   },
   {
     id: 'internship-talan-2025-01',
@@ -99,7 +101,7 @@ export function getTimeline(locale = 'fr') {
     }));
 }
 
-// Date formatter (FR default): Jour / Mois / Année
+// Date formatter (FR default): Mois Année
 const monthNames = {
   fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
   en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -108,8 +110,7 @@ const monthNames = {
 export function formatTimelineDate(isoDate, locale = 'fr') {
   const d = new Date(isoDate);
   if (Number.isNaN(d.getTime())) return isoDate;
-  const day = d.getDate().toString().padStart(2, '0');
   const month = monthNames[locale]?.[d.getMonth()] || monthNames.fr[d.getMonth()];
   const year = d.getFullYear();
-  return `${day} / ${month} / ${year}`;
+  return `${month} ${year}`;
 }
