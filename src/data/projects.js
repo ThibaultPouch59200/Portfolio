@@ -56,6 +56,161 @@ const projects = [
     technologies: ['Sockets', 'Raylib', 'Distributed AI'],
     values: ['Gestion serveur', 'UI/UX', 'Conception IA'],
     link: "https://github.com/Aincrad-Flux/Zappy"
+  },
+  {
+    id: 3,
+    slug: 'raytracer',
+    title: 'RayTracer',
+    description: 'Moteur de ray tracing C++ multithread avec primitives, matériaux, éclairage et sortie PPM / aperçu SFML.',
+    descriptionLong: {
+      fr: 'Moteur de ray tracing écrit en C++17 permettant de rendre des scènes 3D via un système de caméra configurable, plusieurs primitives (sphères, cylindres), matériaux avec composantes ambiante/diffuse/spéculaire, éclairage directionnel, ombres et shading. Rendu multithread (division en tuiles) avec export PPM ou aperçu temps réel + capture PNG via SFML. Construction de scène via fichiers de configuration libconfig (camera, primitives, lights) et architecture modulaire utilisant les patrons Builder, Factory, Strategy et Composite pour extensibilité et maintenance.',
+      en: 'C++17 ray tracing engine rendering 3D scenes with a configurable camera system, multiple primitives (spheres, cylinders), materials (ambient/diffuse/specular components), directional lights, shadows and shading. Multithreaded tile-based rendering with PPM output or real-time SFML preview + PNG capture. Scenes are described with libconfig files (camera, primitives, lights). Architecture leverages Builder, Factory, Strategy and Composite patterns for modularity and extensibility.'
+    },
+    goals: {
+      fr: [
+        'Support de primitives (sphères, cylindres)',
+        'Matériaux et éclairage directionnel',
+        'Rendu multithread (tuiles)',
+        'Configuration via fichiers libconfig',
+        'Aperçu temps réel SFML'
+      ],
+      en: [
+        'Primitive support (spheres, cylinders)',
+        'Materials & directional lighting',
+        'Multithreaded tile rendering',
+        'Scene config via libconfig files',
+        'Real-time SFML preview'
+      ]
+    },
+    tech: ['C++', 'Ray Tracing', 'Multithreading'],
+    languages: ['C++'],
+    technologies: ['SFML', 'libconfig++', 'Design Patterns'],
+    values: ['Performance', 'Architecture', 'Rendu 3D'],
+    link: '#'
+  },
+  {
+    id: 4,
+    slug: 'arthemis',
+    title: 'ARthemis',
+    description: 'Plateforme Jenkins automatisée (JCasC) pour revue et tests de projets étudiants.',
+    descriptionLong: {
+      fr: 'ARthemis (Automated Review & Testing Engine for Modular Integration on Software) est une plateforme basée sur Jenkins permettant d\'automatiser la revue, l\'exécution de tests et l\'intégration continue de projets étudiants. Elle fournit une configuration Jenkins-as-Code (JCasC), des pipelines Groovy prêts à l\'emploi, une gestion de rôles (Sentinel, Architect, Voyager) et une intégration facilitée de dépôts GitHub (y compris privés via clés SSH). L\'objectif est d\'accélérer le déploiement, standardiser les tests et améliorer la qualité logicielle.',
+      en: 'ARthemis (Automated Review & Testing Engine for Modular Integration on Software) is a Jenkins-based platform automating review, testing and continuous integration for student projects. It delivers Jenkins Configuration as Code (JCasC), ready-to-use Groovy pipelines, role-based access (Sentinel, Architect, Voyager) and streamlined onboarding of GitHub repositories (including private via SSH keys). The goal is to accelerate provisioning, standardize testing and improve software quality.'
+    },
+    goals: {
+      fr: [
+        'Déploiement rapide d\'une instance Jenkins prête',
+        'Standardiser tests et revues automatiques',
+        'Gestion centralisée des rôles et permissions',
+        'Intégration simple de dépôts GitHub privés',
+        'Améliorer la qualité et la traçabilité'
+      ],
+      en: [
+        'Rapid provisioning of a ready Jenkins instance',
+        'Standardize automated tests & reviews',
+        'Central role & permission management',
+        'Easy onboarding of private GitHub repos',
+        'Improve quality and traceability'
+      ]
+    },
+    tech: ['Jenkins', 'CI/CD', 'Automation'],
+    languages: ['Groovy', 'YAML', 'Shell'],
+    technologies: ['JCasC', 'Pipelines', 'SSH Integration'],
+    values: ['Automatisation', 'Qualité', 'Intégration Continue'],
+    link: 'https://github.com/ton-utilisateur/ARTHEMIS'
+  },
+  {
+    id: 5,
+    slug: 'jiraswapautomate',
+    title: 'JiraSwapAutomate',
+    description: 'Outil de synchronisation multi‑Jira : tickets, commentaires, temps & automatisations.',
+    descriptionLong: {
+      fr: 'JiraSwapAutomate est un outil destiné à synchroniser automatiquement des tickets entre plusieurs instances Jira (interne ↔ client). Il gère le transfert conditionnel (avec validation) des modifications, la synchronisation des commentaires, des pièces jointes et l\'automatisation des mises à jour. Il inclut aussi la gestion des entrées de temps (imports Excel) et un système de logs/reporting détaillé. Déployable via Docker et extensible pour divers workflows de gestion de projet.',
+      en: 'JiraSwapAutomate is a tool to automatically synchronize tickets across multiple Jira instances (internal ↔ client). It performs conditional (validated) propagation of changes, comment synchronization, attachment handling and bulk updates. It also manages time entries (Excel import) and provides detailed logging/reporting. Deployable with Docker and extensible for various project management workflows.'
+    },
+    goals: {
+      fr: [
+        'Synchroniser tickets & commentaires entre instances',
+        'Garder modifications internes isolées jusqu\'à validation',
+        'Automatiser transferts & mises à jour',
+        'Gérer entrées de temps mensuelles',
+        'Centraliser logs et traçabilité'
+      ],
+      en: [
+        'Sync tickets & comments across instances',
+        'Isolate internal edits until validation',
+        'Automate transfers & bulk updates',
+        'Manage monthly time entries',
+        'Centralize logs & traceability'
+      ]
+    },
+    tech: ['Docker', 'Automation', 'API'],
+    languages: ['Python', 'Shell', 'Docker'],
+    technologies: ['Jira API', 'Webhooks', 'Excel Import'],
+    values: ['Automatisation', 'Productivité', 'Qualité'],
+    link: '#'
+  },
+  {
+    id: 6,
+    slug: 'mytop',
+    title: 'MyTop',
+    description: 'Outil de monitoring système modulaire (terminal ncurses & interface graphique SFML).',
+    descriptionLong: {
+      fr: 'MyTop est un outil de supervision système en temps réel offrant une architecture modulaire permettant d\'activer ou désactiver des modules (CPU, RAM, Batterie, Réseau, Système, Temps). Il fournit deux interfaces : terminal (ncurses) et graphique (SFML). Actualisation configurable, navigation clavier, et design extensible via ajout de nouveaux modules implémentant une interface commune. Idéal pour explorer les APIs système et la conception modulaire.',
+      en: 'MyTop is a real-time system monitoring tool with a modular architecture where each subsystem (CPU, RAM, Battery, Network, System Info, Time) is its own module. It offers both a terminal (ncurses) and a graphical (SFML) interface. Refresh rate is adjustable, modules can be toggled live, and new modules can be added by implementing a shared interface. Useful for exploring system APIs and modular design.'
+    },
+    goals: {
+      fr: [
+        'Architecture modulaire extensible',
+        'Double interface (ncurses / SFML)',
+        'Stats système temps réel',
+        'Activation / désactivation de modules',
+        'Taux de rafraîchissement ajustable'
+      ],
+      en: [
+        'Extensible modular architecture',
+        'Dual interface (ncurses / SFML)',
+        'Real-time system stats',
+        'Enable / disable modules',
+        'Adjustable refresh rate'
+      ]
+    },
+    tech: ['C++', 'Monitoring', 'Systems'],
+    languages: ['C++'],
+    technologies: ['ncurses', 'SFML', 'Modules'],
+    values: ['Modularité', 'Performance', 'Ergonomie'],
+    link: '#'
+  },
+  {
+    id: 7,
+    slug: 'invasori-infinito',
+    title: 'Invasori Infinito',
+    description: 'Jeu arcade type Space Invaders infini avec power-ups, boss et boucle temporelle.',
+    descriptionLong: {
+      fr: 'Invasori Infinito est un jeu arcade inspiré de Space Invaders, créé lors d\'un hackathon. Le joueur incarne le Commandant Lupo Bruni piégé dans une boucle temporelle en 3147, tentant de sauver une Terre mourante. Vagues infinies d\'ennemis, boss périodiques, power-ups stratégiques (effacement écran, cadence de tir, vitesse, vie) et narration environnementale (séquence secrète, apparition Fenice). Objectif : survivre le plus longtemps et repousser l\'inévitable tout en cherchant à briser le cycle.',
+      en: 'Invasori Infinito is a Space-Invaders inspired arcade game built during a hackathon. You play Commander Lupo Bruni, trapped in a time loop in the year 3147 trying to save a dying Earth. Endless alien waves, periodic bosses, strategic power-ups (screen wipe, fire rate, movement speed, extra life) and environmental storytelling (secret input sequence, the Phoenix apparition). Goal: survive as long as possible and push for a way to break the loop.'
+    },
+    goals: {
+      fr: [
+        'Boucle de jeu arcade infinie',
+        'Gestion de power-ups variés',
+        'Boss récurrents toutes les X points',
+        'Narration légère intégrée',
+        'Score & progression de difficulté'
+      ],
+      en: [
+        'Endless arcade gameplay loop',
+        'Varied power-up system',
+        'Recurring boss every score threshold',
+        'Light embedded storytelling',
+        'Score & dynamic difficulty scaling'
+      ]
+    },
+    tech: ['Game Jam', 'Arcade', 'Gameplay'],
+    languages: ['Python'],
+    technologies: ['Pygame'],
+    values: ['Créativité', 'Rapidité', 'Gameplay'],
+    link: '#'
   }
 ];
 
