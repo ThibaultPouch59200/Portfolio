@@ -26,13 +26,6 @@ export const timelineEvents = [
     description: { fr: 'Transition vers Tek3.', en: 'Transition into Tek3.' }
   },
   {
-    id: 'epitech-tek2-end-2025-07',
-    date: '2025-07-15',
-    type: 'education',
-    title: { fr: 'Fin de 2e année à Epitech', en: 'End of 2nd year at Epitech' },
-    description: { fr: 'Clôture de la Tek2.', en: 'Completed second year.' }
-  },
-  {
     id: 'project-zappy-2025-06',
     date: '2025-06-15',
     type: 'project',
@@ -72,13 +65,6 @@ export const timelineEvents = [
     type: 'education',
     title: { fr: 'Début de 2e année à Epitech', en: 'Start of 2nd year at Epitech' },
     description: { fr: 'Entrée en Tek2.', en: 'Entering second year.' }
-  },
-  {
-    id: 'epitech-tek1-end-2024-07',
-    date: '2024-07-15',
-    type: 'education',
-    title: { fr: 'Fin de 1re année à Epitech', en: 'End of 1st year at Epitech' },
-    description: { fr: 'Validation de la première année.', en: 'First year completed.' }
   },
   {
     id: 'epitech-tek1-start-2023-10',
