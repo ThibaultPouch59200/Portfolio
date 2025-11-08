@@ -16,6 +16,7 @@ import { resetHomeContent } from '../utils/homeContentManager.js';
 import ProjectForm from '../components/ProjectForm.jsx';
 import EventForm from '../components/EventForm.jsx';
 import HomeContentForm from '../components/HomeContentForm.jsx';
+import ProjectsSettingsForm from '../components/ProjectsSettingsForm.jsx';
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('projects');
@@ -24,6 +25,7 @@ export default function AdminDashboard() {
   const [editingProject, setEditingProject] = useState(null);
   const [editingEvent, setEditingEvent] = useState(null);
   const [editingHomeContent, setEditingHomeContent] = useState(false);
+  const [editingProjectsSettings, setEditingProjectsSettings] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -181,13 +183,32 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-semibold text-dark dark:text-cream">Projects</h2>
-              <button
-                onClick={() => setEditingProject({ id: Date.now(), isNew: true })}
-                className="px-4 py-2 bg-accent text-white rounded-lg hover:opacity-90 transition-colors text-sm font-medium"
-              >
-                + Add Project
-              </button>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setEditingProjectsSettings(true)}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:opacity-90 transition-colors text-sm font-medium"
+                >
+                  ⚙️ Paramètres
+                </button>
+                <button
+                  onClick={() => setEditingProject({ id: Date.now(), isNew: true })}
+                  className="px-4 py-2 bg-accent text-white rounded-lg hover:opacity-90 transition-colors text-sm font-medium"
+                >
+                  + Add Project
+                </button>
+              </div>
             </div>
+
+            {editingProjectsSettings ? (
+              <ProjectsSettingsForm
+                availableProjects={projectsList}
+                onSave={() => {
+                  setEditingProjectsSettings(false);
+                  window.location.reload();
+                }}
+                onCancel={() => setEditingProjectsSettings(false)}
+              />
+            ) : null}
 
             {editingProject ? (
               <ProjectForm
