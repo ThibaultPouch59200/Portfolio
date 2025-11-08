@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getHomeContent, saveHomeContent, defaultHomeContent } from '../utils/homeContentManager';
 
-export default function HomeContentForm({ onSave, onCancel }) {
+export default function HomeContentForm({ onSave, onCancel, availableProjects = [] }) {
   const [activeBlock, setActiveBlock] = useState('hero');
   const [content, setContent] = useState(defaultHomeContent);
   const [currentLang, setCurrentLang] = useState('fr');
@@ -214,41 +214,103 @@ export default function HomeContentForm({ onSave, onCancel }) {
         {activeBlock === 'featured' && (
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-1 text-dark/70 dark:text-beige/80">Slugs des projets en avant (un par ligne)</label>
-              <p className="text-xs text-dark/60 dark:text-beige/60 mb-2">
-                Entrez les slugs des projets à afficher en avant. Les slugs doivent correspondre aux slugs des projets existants.
+              <label className="block text-sm font-medium mb-1 text-dark/70 dark:text-beige/80">Projets en avant</label>
+              <p className="text-xs text-dark/60 dark:text-beige/60 mb-4">
+                Sélectionnez les projets à afficher en avant sur la page d'accueil. L'ordre d'affichage suit l'ordre de sélection.
               </p>
-              <div className="space-y-2">
-                {content.featuredProjects.slugs.map((slug, i) => (
-                  <div key={i} className="flex gap-2">
-                    <input
-                      type="text"
-                      value={slug}
-                      onChange={(e) => {
-                        const newSlugs = [...content.featuredProjects.slugs];
-                        newSlugs[i] = e.target.value;
-                        handleChange('featuredProjects.slugs', newSlugs);
-                      }}
-                      className="flex-1 px-3 py-2 border border-light-border dark:border-darkTheme-border rounded bg-light-bg dark:bg-darkTheme-bg text-dark dark:text-cream"
-                      placeholder="ex: jeb-incubator"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => handleArrayRemove('featuredProjects.slugs', i)}
-                      className="px-3 py-2 bg-red-600 text-white rounded hover:opacity-90"
-                    >
-                      ×
-                    </button>
+
+              {availableProjects.length === 0 ? (
+                <p className="text-sm text-dark/60 dark:text-beige/60 italic">Aucun projet disponible</p>
+              ) : (
+                <div className="space-y-2 max-h-96 overflow-y-auto border border-light-border dark:border-darkTheme-border rounded-lg p-4">
+                  {availableProjects.map((project) => {
+                    const isSelected = content.featuredProjects.slugs.includes(project.slug);
+                    const projectTitle = typeof project.title === 'object'
+                      ? (project.title[currentLang] || project.title.fr || project.title.en)
+                      : project.title;
+                    const projectDescription = typeof project.description === 'object'
+                      ? (project.description[currentLang] || project.description.fr || project.description.en)
+                      : project.description;
+
+                    return (
+                      <div
+                        key={project.id}
+                        className={`p-3 border rounded-lg cursor-pointer transition-colors ${
+                          isSelected
+                            ? 'border-accent bg-accent/10 dark:bg-accent/20'
+                            : 'border-light-border dark:border-darkTheme-border bg-light-surface dark:bg-darkTheme-surface hover:border-accent/50'
+                        }`}
+                        onClick={() => {
+                          const newSlugs = isSelected
+                            ? content.featuredProjects.slugs.filter(s => s !== project.slug)
+                            : [...content.featuredProjects.slugs, project.slug];
+                          handleChange('featuredProjects.slugs', newSlugs);
+                        }}
+                      >
+                        <div className="flex items-start gap-3">
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={() => {}} // Handled by parent div onClick
+                            className="mt-1 w-4 h-4 text-accent border-light-border dark:border-darkTheme-border rounded focus:ring-accent"
+                          />
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-dark dark:text-cream mb-1">{projectTitle}</h4>
+                            <p className="text-sm text-dark/70 dark:text-beige/80 line-clamp-2">{projectDescription}</p>
+                            <div className="flex items-center gap-2 mt-2">
+                              <span className="text-xs text-dark/50 dark:text-beige/50">Slug:</span>
+                              <code className="text-xs px-2 py-0.5 bg-dark/5 dark:bg-cream/10 rounded text-dark/70 dark:text-beige/70">
+                                {project.slug}
+                              </code>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              {content.featuredProjects.slugs.length > 0 && (
+                <div className="mt-4 p-3 bg-accent/10 dark:bg-accent/20 rounded-lg">
+                  <p className="text-sm font-medium text-dark dark:text-cream mb-2">
+                    Projets sélectionnés ({content.featuredProjects.slugs.length}) :
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {content.featuredProjects.slugs.map((slug, index) => {
+                      const project = availableProjects.find(p => p.slug === slug);
+                      const projectTitle = project
+                        ? (typeof project.title === 'object'
+                          ? (project.title[currentLang] || project.title.fr || project.title.en)
+                          : project.title)
+                        : slug;
+
+                      return (
+                        <div
+                          key={slug}
+                          className="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-darkTheme-surface border border-accent rounded text-sm"
+                        >
+                          <span className="text-dark dark:text-cream">{projectTitle}</span>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const newSlugs = content.featuredProjects.slugs.filter((_, i) => i !== index);
+                              handleChange('featuredProjects.slugs', newSlugs);
+                            }}
+                            className="text-red-500 hover:text-red-700 ml-1"
+                          >
+                            ×
+                          </button>
+                        </div>
+                      );
+                    })}
                   </div>
-                ))}
-                <button
-                  type="button"
-                  onClick={() => handleArrayChange('featuredProjects.slugs', '')}
-                  className="px-4 py-2 bg-accent text-white rounded hover:opacity-90 text-sm"
-                >
-                  + Ajouter un projet
-                </button>
-              </div>
+                  <p className="text-xs text-dark/60 dark:text-beige/60 mt-2">
+                    Vous pouvez réorganiser l'ordre en supprimant et re-sélectionnant les projets dans l'ordre souhaité.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         )}

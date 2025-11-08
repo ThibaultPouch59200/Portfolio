@@ -3,21 +3,19 @@ import { useEffect, useState } from 'react';
 import Timeline from '../components/Timeline';
 import projects from '../data/projects';
 import { getProjects } from '../utils/dataManager';
-import { getHomeContent } from '../utils/homeContentManager';
+import { getHomeContent, defaultHomeContent } from '../utils/homeContentManager';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
   const locale = i18n.language.startsWith('en') ? 'en' : 'fr';
   const [mergedProjects, setMergedProjects] = useState(projects);
-  const [homeContent, setHomeContent] = useState(null);
+  const [homeContent, setHomeContent] = useState(defaultHomeContent);
 
   useEffect(() => {
     setMergedProjects(getProjects(projects));
     setHomeContent(getHomeContent());
   }, []);
-
-  if (!homeContent) return null;
 
   // Featured projects: use slugs from home content
   const featuredProjects = mergedProjects.filter(p =>
@@ -91,13 +89,21 @@ export default function Home() {
           </Link>
         </header>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map(p => (
+          {featuredProjects.map(p => {
+            const projectTitle = typeof p.title === 'object'
+              ? (p.title[locale] || p.title.fr || p.title.en)
+              : p.title;
+            const projectDescription = typeof p.description === 'object'
+              ? (p.description[locale] || p.description.fr || p.description.en)
+              : p.description;
+
+            return (
             <article key={p.id} className="group relative border border-dark/10 dark:border-cream/10 rounded-md p-5 bg-white dark:bg-dark/50 backdrop-blur-sm shadow-sm hover:shadow transition">
               <h3 className="font-semibold text-lg text-dark dark:text-cream mb-2">
-                {p.title}
+                {projectTitle}
               </h3>
               <p className="text-sm text-dark/70 dark:text-beige/80 mb-4 leading-relaxed">
-                {p.description[locale] || p.description.fr}
+                {projectDescription}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {p.tech.slice(0, 4).map(tk => (
@@ -108,7 +114,8 @@ export default function Home() {
                 {locale === 'fr' ? 'Détails' : 'Details'} →
               </Link>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 

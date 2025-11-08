@@ -328,6 +328,7 @@ export default function AdminDashboard() {
 
             {editingHomeContent ? (
               <HomeContentForm
+                availableProjects={projectsList}
                 onSave={() => {
                   setEditingHomeContent(false);
                   window.location.reload();
