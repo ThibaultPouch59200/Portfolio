@@ -58,7 +58,7 @@ export default function AdminDashboard() {
 
   const handleLogout = () => {
     sessionStorage.removeItem('adminAuthenticated');
-    navigate('/admin/login');
+    navigate('/');
   };
 
   const handleProjectSave = (project) => {
