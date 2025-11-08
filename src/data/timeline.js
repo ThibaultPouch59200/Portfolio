@@ -76,8 +76,8 @@ export const timelineEvents = [
 ];
 
 // Utility to get events sorted descending by date (newest first)
-export function getTimeline(locale = 'fr') {
-  return [...timelineEvents]
+export function getTimeline(locale = 'fr', events = timelineEvents) {
+  return [...events]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .map(evt => ({
       ...evt,

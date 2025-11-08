@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { getTimeline, formatTimelineDate } from '../data/timeline';
+import { useEffect, useState } from 'react';
+import { timelineEvents, getTimeline, formatTimelineDate } from '../data/timeline';
+import { getEvents } from '../utils/dataManager';
 
 // Color coding by type (Tailwind classes)
 const typeStyles = {
@@ -13,7 +15,14 @@ const typeStyles = {
 export default function Timeline({ limit, showDates = true }) {
   const { i18n } = useTranslation();
   const locale = i18n.language.startsWith('en') ? 'en' : 'fr';
-  const events = getTimeline(locale).slice(0, limit || undefined);
+  const [mergedEvents, setMergedEvents] = useState(timelineEvents);
+
+  useEffect(() => {
+    const merged = getEvents(timelineEvents);
+    setMergedEvents(merged);
+  }, []);
+
+  const events = getTimeline(locale, mergedEvents).slice(0, limit || undefined);
 
   return (
     <div className="relative">

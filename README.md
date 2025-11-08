@@ -91,6 +91,43 @@ npm run preview
 - Vercel: import repo > framework détecté
 - GitHub Pages: `npm install -D gh-pages` puis script deploy (à ajouter)
 
+## 🔐 Admin Panel
+
+The portfolio includes an admin panel for managing projects and timeline events without editing code files.
+
+### Setup
+
+1. Create a `.env` file in the root directory:
+```bash
+VITE_ADMIN_PASSWORD=your-secure-password-here
+```
+
+2. Access the admin panel at `/admin/login` (e.g., `http://localhost:5173/admin/login`)
+
+3. Enter the password set in your `.env` file
+
+### Features
+
+- **Projects Management**: Create, edit, or delete projects
+- **Events Management**: Create, edit, or delete timeline events
+- **Data Persistence**: Changes are stored in browser localStorage
+- **Export Data**: Download all changes as JSON
+- **Clear Changes**: Reset to original data from source files
+
+### Important Notes
+
+- The admin panel is protected by password authentication
+- Changes are stored in localStorage (client-side only)
+- To make changes permanent, you can:
+  - Export the data and manually update the source files (`projects.js` and `timeline.js`)
+  - Or keep using localStorage (changes persist across sessions)
+- The `.env` file should **never** be committed to version control (already in `.gitignore`)
+
+### Admin Routes
+
+- `/admin/login` - Login page
+- `/admin` - Dashboard (protected, requires authentication)
+
 ## ✅ À faire ensuite (suggestions)
 - Formulaire de contact fonctionnel (EmailJS / backend)
 - SEO (title dynamique, meta tags, Open Graph)
