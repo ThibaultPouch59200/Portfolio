@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - VITE_ADMIN_PASSWORD=${VITE_ADMIN_PASSWORD:-changeme}
     container_name: portfolio-app
     ports:
       - "3000:3000"

@@ -3,6 +3,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Accept build argument for admin password
+ARG VITE_ADMIN_PASSWORD
+
 # Copy package files
 COPY package*.json ./
 
@@ -11,6 +14,9 @@ RUN npm ci
 
 # Copy source code
 COPY . .
+
+# Set environment variable for build
+ENV VITE_ADMIN_PASSWORD=${VITE_ADMIN_PASSWORD}
 
 # Build the application
 RUN npm run build
